@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import Newname from "./Newname";
 function App() {
+  let [counter, setCounter] = useState(10);
+  const addValue = () => {
+    if (counter < 20) {
+      setCounter(counter + 2);
+    }
+  };
+  const removeValue = () => {
+    if (counter > 0) {
+      setCounter(counter - 2);
+    }
+  };
+
+  if (addValue === 20) {
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>hello Naksh</h1>
+      <Newname />
+      <h1>this is New react</h1>
+      <h2>counter Value: {counter}</h2>
+      <button onClick={addValue}>Add value</button>
+      <br />
+      <button onClick={removeValue}>remove value</button>
     </div>
   );
 }
